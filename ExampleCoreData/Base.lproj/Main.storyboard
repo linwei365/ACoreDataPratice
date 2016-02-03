@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Main Table View Controller-->
+        <!--Students-->
         <scene sceneID="tOl-gU-qYD">
             <objects>
                 <tableViewController id="kCW-ap-iX7" customClass="MainTableViewController" customModule="ExampleCoreData" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,7 +28,7 @@
                             <outlet property="delegate" destination="kCW-ap-iX7" id="Id6-qC-XfH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="4ze-pZ-aV2">
+                    <navigationItem key="navigationItem" title="Students" id="4ze-pZ-aV2">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="w0J-kh-Kwp">
                             <connections>
                                 <action selector="addButtonOnClick:" destination="kCW-ap-iX7" id="Prm-ow-zvO"/>

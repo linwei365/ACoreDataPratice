@@ -26,7 +26,7 @@ class MainTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+//add students
     @IBAction func addButtonOnClick(sender: UIBarButtonItem) {
         self.tableView.delegate = self
         
@@ -47,7 +47,8 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-
+        
+        cell.textLabel?.text = studentsArray[indexPath.row]
         // Configure the cell...
 
         return cell
