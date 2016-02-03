@@ -10,6 +10,8 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
 
+    var studentsArray:[String]=[]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,27 +27,32 @@ class MainTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func addButtonOnClick(sender: UIBarButtonItem) {
+        self.tableView.delegate = self
+        
+        
+    }
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return studentsArray.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
