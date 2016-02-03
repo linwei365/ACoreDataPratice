@@ -28,7 +28,27 @@ class MainTableViewController: UITableViewController {
     }
 //add students
     @IBAction func addButtonOnClick(sender: UIBarButtonItem) {
-        self.tableView.delegate = self
+        
+        let alertController = UIAlertController(title: "Add Student", message: "Add New Student", preferredStyle: .Alert)
+        let saveAlertAction =  UIAlertAction(title: "Save", style: .Default) { (action:UIAlertAction) -> Void in
+            let textField = alertController.textFields![0] as UITextField
+            self.studentsArray.append(textField.text!)
+            
+            self.tableView.reloadData()
+        }
+        let cancelAlertAction =  UIAlertAction(title: "cancel", style: .Default) { (action:UIAlertAction) -> Void in
+            
+        }
+        //this adds a textField to the alertViewController letting user input text
+        alertController.addTextFieldWithConfigurationHandler { (textField:UITextField) -> Void in
+            
+        }
+        
+        alertController.addAction(saveAlertAction)
+        alertController.addAction(cancelAlertAction)
+        //this fix the bugg
+        alertController.view.setNeedsLayout()
+        presentViewController(alertController, animated: true, completion: nil)
         
         
     }
